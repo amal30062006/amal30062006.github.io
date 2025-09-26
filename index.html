@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amal | CSE Student Portfolio</title>
+    <!-- Load Tailwind CSS from CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for professional appearance */
+        body {
+            font-family: 'Inter', italic ;
+            background-color: #f8fafc; /* Light gray background */
+        }
+    </style>
+    <script>
+        // Tailwind configuration to use the Inter font (default sans)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af',
+                        'secondary-gray': '#f1f5f9',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen antialiased text-gray-800">
+
+    <!-- Header / Navigation Bar -->
+    <header class="w-full bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary-blue">Amal</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-primary-blue transition duration-150">About</a>
+                <a href="#education" class="hover:text-primary-blue transition duration-150">Education</a>
+                <a href="#skills" class="hover:text-primary-blue transition duration-150">Skills</a>
+                <a href="#projects" class="hover:text-primary-blue transition duration-150">Projects</a>
+            </nav>
+            <!-- Mobile Menu Placeholder - not fully implemented for brevity -->
+            <button class="md:hidden p-2 text-primary-blue focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
+                Hello, I'm <span class="text-primary-blue">Amal</span>
+            </h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                Computer Science and Engineering Student from Thrissur, Kerala.
+            </p>
+            <div class="mt-8">
+                <a href="#education" class="inline-block bg-primary-blue text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    View My Education
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">About Me</h3>
+            <div class="bg-secondary-gray p-6 sm:p-10 rounded-xl shadow-lg border-t-4 border-primary-blue">
+                <p class="text-lg leading-relaxed text-gray-700">
+                    I am Amal, an aspiring software developer with a strong foundation in problem-solving and programming principles. I hail from **Thrissur, Kerala**, known as the cultural capital of the state. My journey in technology is driven by curiosity and a passion for creating efficient solutions to real-world problems.
+                </p>
+                <p class="mt-4 text-lg leading-relaxed text-gray-700">
+                    Currently, I am focused on my **Computer Science and Engineering (CSE)** studies, constantly exploring new technologies and deepening my understanding of algorithms and system design.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">Education</h3>
+            
+            <!-- Education Card -->
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl transition duration-300 hover:shadow-primary-blue/30 border-l-4 border-primary-blue">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-900">Computer Science and Engineering (CSE)</h4>
+                        <p class="text-xl text-gray-600 mt-1">Vidya Academy</p>
+                    </div>
+                    <span class="text-sm font-medium text-primary-blue bg-blue-100 px-3 py-1 rounded-full hidden sm:inline-block">In Progress</span>
+                </div>
+                <p class="mt-4 text-gray-700">
+                    Currently pursuing my undergraduate course in Computer Science and Engineering, focusing on core subjects like Data Structures, Algorithms, and Software Development. Dedicated to applying theoretical knowledge through practical projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (Placeholder) -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">Technical Skills</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Placeholder Skill 1 -->
+                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
+                    <p class="text-lg font-medium">Programming Language</p>
+                    <p class="text-sm text-gray-600">e.g., Python, C++</p>
+                </div>
+                <!-- Placeholder Skill 2 -->
+                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
+                    <p class="text-lg font-medium">Web Development</p>
+                    <p class="text-sm text-gray-600">e.g., HTML, CSS, JS</p>
+                </div>
+                <!-- Placeholder Skill 3 -->
+                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
+                    <p class="text-lg font-medium">Data Structures</p>
+                    <p class="text-sm text-gray-600">and Algorithms</p>
+                </div>
+                <!-- Placeholder Skill 4 -->
+                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
+                    <p class="text-lg font-medium">Databases</p>
+                    <p class="text-sm text-gray-600">e.g., SQL, NoSQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Placeholder) -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">Projects</h3>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                <p class="text-lg text-gray-700">
+                    This is where your projects will go! Showcase your best work from Vidya Academy here.
+                </p>
+                <a href="#" class="mt-4 inline-block text-primary-blue hover:underline font-semibold">
+                    Start adding your CSE projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-gray-800 text-white mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm">
+            <p>&copy; 2025 Amal | Student Portfolio. Built with <span class="text-red-400">&hearts;</span> and Tailwind CSS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
