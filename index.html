@@ -9,8 +9,26 @@
     <style>
         /* Custom styles for professional appearance */
         body {
-            font-family: 'Inter', italic ;
+            /* Fix font-family definition and add smooth scrolling */
+            font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* Light gray background */
+            scroll-behavior: smooth; /* Smooth animation when navigating to sections */
+        }
+
+        /* Subtle lift and enhanced shadow effect on hover for the Education Cards */
+        .education-card {
+            transition: all 0.3s ease; /* Ensure smooth transition for hover effects */
+        }
+        
+        .education-card:hover {
+            transform: translateY(-4px); /* Slightly lift the card */
+            box-shadow: 0 15px 30px -5px rgba(6, 182, 212, 0.2), 0 10px 15px -5px rgba(0, 0, 0, 0.05); /* Shadow with accent color tint */
+        }
+
+        /* Accessibility focus state enhancement */
+        a:focus, button:focus {
+            outline: 3px solid #06b6d4; /* Accent Cyan focus ring */
+            outline-offset: 2px;
         }
     </style>
     <script>
@@ -19,7 +37,8 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-blue': '#1e40af',
+                        'primary-blue': '#1e40af', // Darker identity color
+                        'accent-cyan': '#06b6d4', // New vibrant color (Tailwind cyan-500)
                         'secondary-gray': '#f1f5f9',
                     }
                 }
@@ -34,10 +53,10 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-primary-blue">Amal</h1>
             <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#about" class="hover:text-primary-blue transition duration-150">About</a>
-                <a href="#education" class="hover:text-primary-blue transition duration-150">Education</a>
-                <a href="#skills" class="hover:text-primary-blue transition duration-150">Skills</a>
-                <a href="#projects" class="hover:text-primary-blue transition duration-150">Projects</a>
+                <a href="#about" class="hover:text-accent-cyan transition duration-150">About</a>
+                <a href="#education" class="hover:text-accent-cyan transition duration-150">Education</a>
+                <a href="#skills" class="hover:text-accent-cyan transition duration-150">Skills</a>
+                <a href="#projects" class="hover:text-accent-cyan transition duration-150">Projects</a>
             </nav>
             <!-- Mobile Menu Placeholder - not fully implemented for brevity -->
             <button class="md:hidden p-2 text-primary-blue focus:outline-none">
@@ -48,17 +67,18 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="py-16 md:py-24 bg-gray-50">
+    <!-- Hero Section - Added subtle radial gradient for a dynamic background -->
+    <section class="py-16 md:py-24" style="background: radial-gradient(circle at top right, #e0f7fa 0%, #f8fafc 45%, #f8fafc 100%);">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h2 class="text-4xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
-                Hello, I'm <span class="text-primary-blue">Amal</span>
+                Hello, I'm <span class="text-accent-cyan">Amal</span>
             </h2>
-            <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+            <p class="mt-4 text-xl text-gray-700 max-w-2xl mx-auto">
                 Computer Science and Engineering Student from Thrissur, Kerala.
             </p>
             <div class="mt-8">
-                <a href="#education" class="inline-block bg-primary-blue text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                <!-- Button now uses the vibrant accent color -->
+                <a href="#education" class="inline-block bg-accent-cyan text-white font-bold py-3 px-10 rounded-full shadow-xl shadow-cyan-500/50 hover:bg-cyan-600 transition duration-300 transform hover:scale-105 tracking-wider">
                     View My Education
                 </a>
             </div>
@@ -69,7 +89,8 @@
     <section id="about" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">About Me</h3>
-            <div class="bg-secondary-gray p-6 sm:p-10 rounded-xl shadow-lg border-t-4 border-primary-blue">
+            <!-- Border color updated to the accent color -->
+            <div class="bg-secondary-gray p-6 sm:p-10 rounded-xl shadow-lg border-t-4 border-accent-cyan">
                 <p class="text-lg leading-relaxed text-gray-700">
                     I am Amal, an aspiring software developer with a strong foundation in problem-solving and programming principles. I hail from **Thrissur, Kerala**, known as the cultural capital of the state. My journey in technology is driven by curiosity and a passion for creating efficient solutions to real-world problems.
                 </p>
@@ -85,46 +106,63 @@
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">Education</h3>
             
-            <!-- Education Card -->
-            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl transition duration-300 hover:shadow-primary-blue/30 border-l-4 border-primary-blue">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h4 class="text-2xl font-semibold text-gray-900">Computer Science and Engineering (CSE)</h4>
-                        <p class="text-xl text-gray-600 mt-1">Vidya Academy</p>
+            <div class="space-y-6">
+                
+                <!-- Education Card 1: Current CSE Course - Uses Accent Cyan for border and tag -->
+                <div class="education-card bg-white p-6 sm:p-8 rounded-xl shadow-2xl border-l-4 border-accent-cyan">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="text-2xl font-semibold text-gray-900">Computer Science and Engineering (CSE)</h4>
+                            <p class="text-xl text-gray-600 mt-1">Vidya Academy</p>
+                        </div>
+                        <span class="text-sm font-medium text-accent-cyan bg-cyan-100 px-3 py-1 rounded-full hidden sm:inline-block">In Progress</span>
                     </div>
-                    <span class="text-sm font-medium text-primary-blue bg-blue-100 px-3 py-1 rounded-full hidden sm:inline-block">In Progress</span>
+                    <p class="mt-4 text-gray-700">
+                        Currently pursuing my undergraduate course in Computer Science and Engineering, focusing on core subjects like Data Structures, Algorithms, and Software Development. Dedicated to applying theoretical knowledge through practical projects.
+                    </p>
                 </div>
-                <p class="mt-4 text-gray-700">
-                    Currently pursuing my undergraduate course in Computer Science and Engineering, focusing on core subjects like Data Structures, Algorithms, and Software Development. Dedicated to applying theoretical knowledge through practical projects.
-                </p>
+
+                <!-- Education Card 2: Higher Secondary (CHS) -->
+                <div class="education-card bg-white p-6 sm:p-8 rounded-xl shadow-2xl border-l-4 border-gray-400">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="text-2xl font-semibold text-gray-900">Higher Secondary Education (CHS)</h4>
+                            <p class="text-xl text-gray-600 mt-1">Centralized Schooling (CHS) | Thrissur</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600 bg-gray-200 px-3 py-1 rounded-full hidden sm:inline-block">Graduated</span>
+                    </div>
+                    <p class="mt-4 text-gray-700">
+                        Completed my 12th standard education, which established a vital foundation for scientific and analytical thinking, crucial for my current CSE studies.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section (Placeholder) -->
+    <!-- Skills Section (Placeholder) - Cards updated for a modern, vibrant hover effect -->
     <section id="skills" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-3xl font-bold text-center text-primary-blue mb-8">Technical Skills</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Placeholder Skill 1 -->
-                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
-                    <p class="text-lg font-medium">Programming Language</p>
-                    <p class="text-sm text-gray-600">e.g., Python, C++</p>
+                <!-- Skill Card Template Updated -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:scale-[1.02] hover:border-accent-cyan">
+                    <p class="text-lg font-medium text-gray-800">Programming Language</p>
+                    <p class="text-sm text-gray-500">e.g., Python, C++</p>
                 </div>
-                <!-- Placeholder Skill 2 -->
-                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
-                    <p class="text-lg font-medium">Web Development</p>
-                    <p class="text-sm text-gray-600">e.g., HTML, CSS, JS</p>
+                <!-- Skill Card Template Updated -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:scale-[1.02] hover:border-accent-cyan">
+                    <p class="text-lg font-medium text-gray-800">Web Development</p>
+                    <p class="text-sm text-gray-500">e.g., HTML, CSS, JS</p>
                 </div>
-                <!-- Placeholder Skill 3 -->
-                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
-                    <p class="text-lg font-medium">Data Structures</p>
-                    <p class="text-sm text-gray-600">and Algorithms</p>
+                <!-- Skill Card Template Updated -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:scale-[1.02] hover:border-accent-cyan">
+                    <p class="text-lg font-medium text-gray-800">Data Structures</p>
+                    <p class="text-sm text-gray-500">and Algorithms</p>
                 </div>
-                <!-- Placeholder Skill 4 -->
-                <div class="text-center p-4 bg-secondary-gray rounded-lg shadow-md hover:shadow-lg transition duration-200">
-                    <p class="text-lg font-medium">Databases</p>
-                    <p class="text-sm text-gray-600">e.g., SQL, NoSQL</p>
+                <!-- Skill Card Template Updated -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-lg border border-gray-200 transition duration-300 transform hover:scale-[1.02] hover:border-accent-cyan">
+                    <p class="text-lg font-medium text-gray-800">Databases</p>
+                    <p class="text-sm text-gray-500">e.g., SQL, NoSQL</p>
                 </div>
             </div>
         </div>
@@ -138,7 +176,8 @@
                 <p class="text-lg text-gray-700">
                     This is where your projects will go! Showcase your best work from Vidya Academy here.
                 </p>
-                <a href="#" class="mt-4 inline-block text-primary-blue hover:underline font-semibold">
+                <!-- Link updated to accent color -->
+                <a href="#" class="mt-4 inline-block text-accent-cyan hover:underline font-semibold">
                     Start adding your CSE projects
                 </a>
             </div>
@@ -148,7 +187,7 @@
     <!-- Footer -->
     <footer class="w-full bg-gray-800 text-white mt-12">
         <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm">
-            <p>&copy; 2025 Amal | Student Portfolio. Built with <span class="text-red-400">&hearts;</span> and Tailwind CSS.</p>
+            <p>&copy; 2025 Amal | Student Portfolio. Built with <span class="text-accent-cyan">&hearts;</span> and Tailwind CSS.</p>
         </div>
     </footer>
 
